@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>Credit Card Fraud Detection</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<style type="text/css">
+		DIV.container {
+		    text-align: center; }
+	</style>
+</head>
+
+<body>
+
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+	  <a class="navbar-brand" href="{% url 'home' %}">LOGO</a>
+	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+	    <span class="navbar-toggler-icon"></span>
+	  </button>
+	  <div class="collapse navbar-collapse" id="navbarNav">
+	    <ul class="navbar-nav">
+	      <li class="nav-item active">
+	        <a class="nav-link" href="{% url 'home' %}">Home <span class="sr-only">(current)</span></a>
+	      </li>
+	      <li class="nav-item">
+	        <a class="nav-link" href="#">Source-Code</a>
+	      </li>
+	      <li class="nav-item">
+	        <a class="nav-link" href="{% url 'notebook' %}">Jupyter-Notebook</a>
+	      </li>
+	      <li class="nav-item">
+	        <a class="nav-link" href="{% url 'api_overview' %}">REST-API</a>
+	      </li>
+	    </ul>
+	  </div>
+	</nav>
+
+	<br><br>
+
+	<div class="container">
+		<h2>Credit Card Fraud Detection</h2>
+		<br>
+		<h6>Scaled/Transformed features : </h6>
+		<p>['scaled_amount', 'scaled_time', 'V1', 'V2', 'V3', 'V4', 'V5', 'V6', 'V7', 'V8', 'V9', 'V10',
+       'V11', 'V12', 'V13', 'V14', 'V15', <br> 'V16', 'V17', 'V18', 'V19', 'V20',
+       'V21', 'V22', 'V23', 'V24', 'V25', 'V26', 'V27', 'V28']</p>
+
+		<form method="GET" action="{% url 'predict_using_api' %}">
+			<div class="form-group">
+				<br>
+			    <label for="exampleFormControlTextarea1">Array Data: </label>
+			    <textarea class="form-control" name="data" rows="4">{{ txt }}</textarea>
+			    <br><br>
+			    <button type="submit" class="btn btn-primary">Predict</button>
+		    </div>
+		</form>
+
+		<h4 id="result">{{ preds }}</h4>
+
+	</div>
+
+</body>
+</html>
