@@ -43,7 +43,7 @@ This endpoint get a JSON object in a post method, that represents the new transa
 ```
 - **/api/get_preds_api_columns/** : 
 
-This endpoint get a JSON object in a post method, that represents the new transaction as an array data in a string format :
+This endpoint get a JSON object in a post method, that represents the new transaction as an array data in a list columns format :
 
 ```json
 {
@@ -51,7 +51,21 @@ This endpoint get a JSON object in a post method, that represents the new transa
  	 "scaled_time" : -1.140852,
  	 "V1" : -1.3598071336738,
  	 "V2" : -0.0727811733098497,
- 	  ...
+ 	  ....
  	 "V28" : -0.0210530534538215
 }
 ```
+## Django web application consuming the API (/api/get_preds_api/): "cardfraud" app in django project
+
+```python
+def predict_using_api(request):
+	array_data = request.GET.get('data')	
+	json_data = {"array_data" : array_data}
+	preds = requests.post('http://127.0.0.1:8000/api/get_preds_api/', json=json_data).json()
+	context = {'preds':preds, 'txt':array_data}
+	return render(request, 'cardfraud/base.html', context)
+```
+- **Screenshots:**
+
+
+
