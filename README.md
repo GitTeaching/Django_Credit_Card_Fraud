@@ -29,3 +29,29 @@ Django **REST API** that uses Machine Learning models to predict and detect frau
 - **Sampling approches for umbalanced dataset** : random undersampling before cross-validation, NearMiss undersampling during cross-validation, oversampling before cross-validation, and SMOTE oversampling during cross-validation. 
 
 - Performance metrics : roc_auc_score = 0.9279491847035141.
+
+## The API acces points : "api" app in django project
+
+- **/api/get_preds_api/** : 
+
+This endpoint get a JSON object in a post method, that represents the new transaction as an array data in a string format :
+
+```json
+{
+"array_data" : "-0.331160, -1.140852, -0.258122, 0.557335, 0.190181, -0.251512, 2.437678, 3.673470, -0.226081, 0.974771, -0.496447, -0.187835, -0.328845, -0.270236, 0.059288, 0.270680, 1.425708, 0.278540, -0.805234, 0.768660, 0.692110, 0.157654, 0.122859, 0.226644, -0.122199, 0.998750, -0.285464, -0.369937, 0.198380, 0.169892"
+}
+```
+- **/api/get_preds_api_columns/** : 
+
+This endpoint get a JSON object in a post method, that represents the new transaction as an array data in a string format :
+
+```json
+{
+ 	 "scaled_amount" : -0.331160,
+ 	 "scaled_time" : -1.140852,
+ 	 "V1" : -1.3598071336738,
+ 	 "V2" : -0.0727811733098497,
+ 	  ...
+ 	 "V28" : -0.0210530534538215
+}
+```
