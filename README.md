@@ -14,13 +14,19 @@ Django **REST API** that uses Machine Learning models to predict and detect frau
 
 - Columns from V1 to V28 have already (originally) been scaled and transformed using PCA. scaled_amount and scaled_time features have been scaled using StandardScaler.
 
-- The dataset is highly unbalanced, the positive class (frauds) account for 0.172% of all transactions. A need for **sampling (udersampling or oversamplig)** before traning machine learning models.
+- The dataset is highly umbalanced, the positive class (frauds) account for 0.172% of all transactions. A need for **sampling (udersampling or oversamplig)** before traning machine learning models.
+
+<img src="https://github.com/GitTeaching/Django_Credit_Card_Fraud/blob/master/Django_Credit_Card_Fraud/resources/umbalanced%20dataset.png">
 
 - EDA and processing steps could be found in the notebook : https://github.com/GitTeaching/Django_Credit_Card_Fraud/blob/master/Credit%20Card%20Fraud%20Detection.ipynb
 
 #### Correlations : 
 - Negative Correlations: **V17, V14, V12 and V10** are negatively correlated. Notice how the lower these values are, the more likely the end result will be a fraud transaction.
 - Positive Correlations: **V2, V4, V11, and V19** are positively correlated. Notice how the higher these values are, the more likely the end result will be a fraud transaction.
+
+<img src="https://github.com/GitTeaching/Django_Credit_Card_Fraud/blob/master/Django_Credit_Card_Fraud/resources/boxplot%201.png">
+
+<img src="https://github.com/GitTeaching/Django_Credit_Card_Fraud/blob/master/Django_Credit_Card_Fraud/resources/boxplot%202.png">
 
 ## Modelling
 
@@ -29,6 +35,8 @@ Django **REST API** that uses Machine Learning models to predict and detect frau
 - **Sampling approches for umbalanced dataset** : random undersampling before cross-validation, NearMiss undersampling during cross-validation, oversampling before cross-validation, and SMOTE oversampling during cross-validation. 
 
 - Performance metrics : roc_auc_score = 0.9279491847035141.
+
+- Details on the notebook : https://github.com/GitTeaching/Django_Credit_Card_Fraud/blob/master/Credit%20Card%20Fraud%20Detection.ipynb
 
 ## The API acces points : "api" app in django project
 
@@ -55,6 +63,8 @@ This endpoint get a JSON object in a post method, that represents the new transa
  	 "V28" : -0.0210530534538215
 }
 ```
+Test example could be found here : https://github.com/GitTeaching/Django_Credit_Card_Fraud/blob/master/Django_Credit_Card_Fraud/resources/arraydata%20-%20json%20columns%20-%20for%20testing.txt
+
 ## Django web application consuming the API (/api/get_preds_api/): "cardfraud" app in django project
 
 ```python
