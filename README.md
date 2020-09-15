@@ -1,2 +1,25 @@
 # Django_Credit_Card_Fraud
-Django REST API that uses Machine Learning models to predict and detect fraud in online credit card transactions.
+Django **REST API** that uses Machine Learning models to predict and detect fraud in online credit card transactions.
+
+"It is important that banks and credit card companies are able to recognize fraudulent credit card transactions so that customers are not charged for items that they did not purchase."
+
+## Data used :
+- Credit Card Fraud Detection Dataset on Kaggle : https://www.kaggle.com/mlg-ulb/creditcardfraud
+
+- The datasets contains transactions made by credit cards in September 2013 by european cardholders.
+
+- This dataset presents transactions that occurred in two days, where we have **492 frauds out of 284,807** transactions
+
+- Columns (30 features + class) : [scaled_amount,	scaled_time,	V1,	V2,	V3,	V4,	V5,	V6,	V7,	V8,	V9,	V10,	V11,	V12,	V13,	V14,	V15,	V16,	V17,	V18,	V19,	V20,	V21,	V22,	V23,	V24,	V25,	V26,	V27,	V28,	Class]
+
+- Columns from V1 to V28 have already (originally) been scaled and transformed using PCA. scaled_amount and scaled_time features have been scaled using StandardScaler.
+
+- The dataset is highly unbalanced, the positive class (frauds) account for 0.172% of all transactions. A need for **sampling (udersampling or oversamplig)** before traning machine learning models.
+
+- EDA and processing steps could be found in the notebook : https://github.com/GitTeaching/Django_Credit_Card_Fraud/blob/master/Credit%20Card%20Fraud%20Detection.ipynb
+
+#### Correlations : 
+- Negative Correlations: **V17, V14, V12 and V10** are negatively correlated. Notice how the lower these values are, the more likely the end result will be a fraud transaction.
+- Positive Correlations: **V2, V4, V11, and V19** are positively correlated. Notice how the higher these values are, the more likely the end result will be a fraud transaction.
+
+<img src="">
