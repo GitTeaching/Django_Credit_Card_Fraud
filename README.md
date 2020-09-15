@@ -65,7 +65,9 @@ This endpoint get a JSON object in a post method, that represents the new transa
 ```
 Test example could be found here : https://github.com/GitTeaching/Django_Credit_Card_Fraud/blob/master/Django_Credit_Card_Fraud/resources/arraydata%20-%20json%20columns%20-%20for%20testing.txt
 
-## Django web application consuming the API (/api/get_preds_api/): "cardfraud" app in django project
+## Django web application consuming the API (/api/get_preds_api/): 
+
+"cardfraud" app in django project.
 
 ```python
 def predict_using_api(request):
