@@ -3,7 +3,7 @@ Django **REST API** that uses Machine Learning models to predict and detect frau
 
 "It is important that banks and credit card companies are able to recognize fraudulent credit card transactions so that customers are not charged for items that they did not purchase."
 
-## Data used :
+## Dataset
 - Credit Card Fraud Detection Dataset on Kaggle : https://www.kaggle.com/mlg-ulb/creditcardfraud
 
 - The datasets contains transactions made by credit cards in September 2013 by european cardholders.
@@ -22,4 +22,10 @@ Django **REST API** that uses Machine Learning models to predict and detect frau
 - Negative Correlations: **V17, V14, V12 and V10** are negatively correlated. Notice how the lower these values are, the more likely the end result will be a fraud transaction.
 - Positive Correlations: **V2, V4, V11, and V19** are positively correlated. Notice how the higher these values are, the more likely the end result will be a fraud transaction.
 
-<img src="">
+## Modelling
+
+- Tested **classifiers** : Logistic Regression, RandomForest, SVM - with GridSearch for optimization. Best - used in API : Logistic Regression.
+
+- **Sampling approches for umbalanced dataset** : random undersampling before cross-validation, NearMiss undersampling during cross-validation, oversampling before cross-validation, and SMOTE oversampling during cross-validation. 
+
+- Performance metrics : roc_auc_score = 0.9279491847035141.
