@@ -75,7 +75,8 @@ def predict_using_api(request):
 	context = {'preds':preds, 'txt':array_data}
 	return render(request, 'cardfraud/base.html', context)
 ```
-- **Screenshots:**
+- **Screenshot:**
 
+<img src="https://github.com/GitTeaching/Django_Credit_Card_Fraud/blob/master/Django_Credit_Card_Fraud/resources/Screenshots%201.png" width="700">
 
 
