@@ -42,7 +42,7 @@ Django **REST API** that uses Machine Learning models to predict and detect frau
 
 - **/api/get_preds_api/** : 
 
-This endpoint get a JSON object in a post method, that represents the new transaction as an array data in a string format :
+This endpoint gets a JSON object in a post method, that represents the new transaction as an array data in a string format :
 
 ```json
 {
@@ -51,7 +51,7 @@ This endpoint get a JSON object in a post method, that represents the new transa
 ```
 - **/api/get_preds_api_columns/** : 
 
-This endpoint get a JSON object in a post method, that represents the new transaction as an array data in a list columns format :
+This endpoint gets a JSON object in a post method, that represents the new transaction as an array data in a list columns format :
 
 ```json
 {
